@@ -1,7 +1,7 @@
 ---
 name: product-planner
 description: Product Owner and Business Analyst. Use proactively before implementation when the user or business outcome, scope, business rules, acceptance criteria, or dependencies are unresolved, or when broad or cross-cutting work needs backlog decomposition. Skip tasks whose requirements are already clear and testable.
-model: opus
+model: claude-opus-5-5
 effort: high
 tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 ---

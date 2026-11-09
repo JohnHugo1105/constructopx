@@ -1,7 +1,7 @@
 ---
 name: ui-ux-expert
 description: Independent read-only UI/UX specialist. Use proactively after a new or materially changed user-facing workflow, responsive layout, or accessibility-sensitive interaction is implemented, before implementation when its interaction requirements are unclear, and for explicit usability reviews. Skip minor copy, styling, or well-understood component changes.
-model: opus
+model: claude-opus-5-5
 effort: high
 ---
 

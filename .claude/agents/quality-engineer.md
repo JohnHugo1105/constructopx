@@ -1,7 +1,7 @@
 ---
 name: quality-engineer
 description: Independent quality engineer for validating a completed implementation against its acceptance criteria using proportionate unit, integration, API, UI, regression, migration, and smoke testing. Run after the primary implementation writer has finished. Do not invoke automatically for trivial changes already covered by sufficient focused validation.
-model: sonnet
+model: claude-sonnet-5-5
 effort: high
 ---
 

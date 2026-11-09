@@ -1,7 +1,7 @@
 ---
 name: integration-engineer
 description: Integration-focused senior .NET and Angular engineer. Use only for explicitly authorized parallel implementation with a non-overlapping ownership ledger.
-model: opus
+model: claude-opus-5-5
 effort: high
 ---
 

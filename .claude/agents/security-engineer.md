@@ -1,7 +1,7 @@
 ---
 name: security-engineer
 description: Independent read-only application security engineer. Use proactively when a change touches authentication, authorization, tenant isolation, PII, payments, webhooks, uploads, the public API, integrations, secrets, dependencies, or operational security; before implementation when a threat model will shape the design, and after it for review. Skip changes that cross no security or privacy boundary.
-model: opus
+model: claude-opus-5-5
 effort: xhigh
 tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 ---

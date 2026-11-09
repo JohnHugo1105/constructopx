@@ -1,7 +1,7 @@
 ---
 name: ux-auditor
 description: Auditor for a corpus of already-collected ConstructOPX UX findings. Use only for holistic UX-architecture analysis, systemic root causes, or a product-wide improvement strategy. Never use for ordinary browser journeys, click-by-click testing, or routine retests.
-model: opus
+model: claude-opus-5-5
 effort: high
 tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 ---

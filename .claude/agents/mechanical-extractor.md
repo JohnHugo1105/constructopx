@@ -1,7 +1,7 @@
 ---
 name: mechanical-extractor
 description: Inexpensive extractor for mechanical checks such as copy tables, screenshot inventories, checklist transcription, and structured notes. Do not use for visual UX judgment, persona journeys, or design critique.
-model: haiku
+model: claude-haiku-5-5
 effort: medium
 tools: Read, Grep, Glob
 ---

@@ -20,7 +20,7 @@ Drive handbooks. This page records what was carried over, what was adapted, and 
 | Money as minor units, void instead of delete, `ClientRequestId` idempotency, UTC `DateTimeOffset`, tenant filtering everywhere | `AGENTS.md` sections 6, 7, 9 |
 | PBKDF2 password hashing, cookie sessions, rate-limited sign-in | `AGENTS.md` section 9 |
 | NuGet lock files (`RestorePackagesWithLockFile`), architecture tests that locate the repo root through `AGENTS.md` | `Directory.Build.props`, `tests/ConstructOPX.ArchitectureTests` |
-| Claude subagent roles and the "Opus decides, Sonnet builds, Haiku extracts" routing | `.claude/agents/`, `CLAUDE.md` |
+| Claude subagent roles | `.claude/agents/`, `CLAUDE.md` |
 | `ui-presentation-audit` and `ui-ux-pro` skills | `.claude/skills/` |
 
 ## Adapted
@@ -33,6 +33,7 @@ Drive handbooks. This page records what was carried over, what was adapted, and 
 | Lock files enforced locally | `RestoreLockedMode` and `TreatWarningsAsErrors` only when `CI=true` | Keeps the inner loop fast while CI stays strict |
 | Angular Material mentioned in `AGENTS.md` | Not used; small shared UI primitives under `web/src/app/shared/ui` | DriveOPX's own `package.json` does not depend on it either; the written rule and the shipped code disagree there |
 | "PR first, squash-merge when done" using `gh` on a Windows PC | Commit task-related files, push to the designated branch, open a PR or merge only when asked | The delivery session for this repository forbids opening PRs unless requested |
+| "Opus decides, Sonnet builds, Haiku extracts", with Opus on most specialists | Sonnet 5.5 (`claude-sonnet-5-5`) is the session default. Haiku 5.5 (`claude-haiku-5-5`) covers narrow subagents, compaction, and lookups. Opus 5.5 (`claude-opus-5-5`) is a step-up, with `opusplan` when Opus should only plan. Fable 5.2 (`claude-fable-5-2`) is never the default | Everyday work stays on the cheapest model that is good at the job. Pins live in `.claude/settings.json` and `CLAUDE.md` |
 | Philippine business time and peso formatting | Kept (`Asia/Manila`, `₱`), configurable per organization | The legacy system's 12% VAT shows a Philippine context |
 
 ## Left out on purpose
@@ -42,7 +43,7 @@ Drive handbooks. This page records what was carried over, what was adapted, and 
 | **Pre-beta credential posture** (agents may read, print, pass and commit credentials to the repository) | It is a decision by DriveOPX's owner for a private, pre-launch repository. It is unsafe as a default here: the retired desktop application committed a signing key (`ConstructOpxUI/*TemporaryKey.pfx`), a database file and commented-out connection strings with credentials. They left the tree when the app was deleted, but remain in git history `AGENTS.md` section 9 forbids committing credentials instead |
 | Pre-beta renter history sharing | DriveOPX product decision, unrelated |
 | DevFlow MCP checkpoints, Azure DevOps and Azure Boards workflow, `.mcp.json` | Tooling specific to the DriveOPX owner's accounts |
-| Codex, Cursor, ZCode directories and model tables | Claude Code is the tool in use here; `AGENTS.md` stays tool-neutral |
+| Codex, Cursor, ZCode directories and model tables | Claude Code is the tool configured here (`.claude/`). The same cost policy is in `AGENTS.md` so another Claude-capable tool can follow it without a second IDE stack |
 | Android emulator and Maestro testing, Capacitor shell, staging VPS deployment, Staging database migration rules | No mobile shell or hosted staging exists for this repository yet. Add them when they do |
 | Provider adapters (payments, social, ads, email, OCR) | No such integration exists in this product |
 | Skills tied to DriveOPX workflows (`seed-data`, `release-mobile-apps`, `restore-hosted-staging`, user-story and board skills) | Not applicable |

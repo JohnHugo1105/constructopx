@@ -1,7 +1,7 @@
 ---
 name: dev-lead-reviewer
 description: Independent read-only development lead. Use proactively, after validation has passed and before reporting done, on Complex-tier or multi-layer work (backend plus frontend, schema or migration, public contract, release candidate), and whenever an independent review is requested. Reviews the final diff for correctness, regressions, architecture, and test coverage. Skip small, low-risk edits.
-model: opus
+model: claude-opus-5-5
 effort: xhigh
 tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 ---

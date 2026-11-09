@@ -438,6 +438,22 @@ specialists (`.claude/agents/`) when isolated context or independent judgment ma
   boundaries, payroll or other money logic, public contracts, large migrations, or high-blast-radius behavior. Use a
   read-only planner before implementation and an independent reviewer after validation.
 
+### Claude model routing
+
+When the tool can choose a Claude model, cost decides the floor. The session default is Sonnet 5.5
+(`claude-sonnet-5-5`, alias `sonnet`): well-scoped features, bug fixes, UI polish, and everyday
+multi-file edits. Haiku 5.5 (`claude-haiku-5-5`, alias `haiku`) is for subagents, compaction,
+summaries, classification, lookups, and narrow browser replays. A subagent does not inherit a more
+expensive parent model unless the role truly needs it. Opus 5.5 (`claude-opus-5-5`, aliases `opus`
+and `best`) is only for complex, open-ended, or codebase-wide work: architecture that needs sustained
+judgment, a large refactor, a difficult review, or a session where Sonnet at a higher effort was still
+wrong. Prefer `opusplan` (Opus plans, Sonnet implements) over leaving the whole session on Opus.
+Fable 5.2 (`claude-fable-5-2`, alias `fable`) is for rare, hard, ambiguous, multi-hour work and is
+never the default; do not use it for a routine change or a small feature. Raise effort from `medium`
+to `high` or `xhigh` before stepping up a model when the miss is skipped files, unrun tests, or a
+refactor abandoned midway. The specialist table and the Claude Code pins are in `CLAUDE.md` and
+`.claude/settings.json`. Older 4.x, 5, and 5.1 Claude IDs are legacy and are not used here.
+
 ### Delivery Evidence
 
 Before declaring implementation complete, confirm that acceptance criteria are satisfied; proportionate builds and

@@ -1,7 +1,7 @@
 ---
 name: solution-architect
 description: Read-only solution architect and codebase explorer. Use proactively before any edit on Complex-tier work (uncertain root cause, cross-component or architecturally significant change, migration, concurrency, tenant or public-contract change). Traces existing behavior, finds reusable patterns, assesses impact, and returns an implementation plan. Skip when the implementation path is already clear.
-model: opus
+model: claude-opus-5-5
 effort: xhigh
 tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 ---
