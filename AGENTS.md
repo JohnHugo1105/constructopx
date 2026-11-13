@@ -1,5 +1,15 @@
 # AGENTS.md
 
+## IDE model routing and UX handoff
+
+Keep small edits in the current session. For complex work, separate planning, implementation, focused checks, and independent review. Keep the normal single writer and follow the repository’s handoff rules.
+
+- **Codex:** use GPT-6.1 Sol Medium for implementation and UX exploration, Sol High for difficult analysis and review, and GPT-6 Luna Medium for extraction and objective replays. When Sol High leaves an important architecture decision or root cause unresolved, try one GPT-6 Astra escalation if the session supports it. Trial GPT-6.1 Terra on bounded visual or browser tasks with an observable result. Leave the main-session model in the picker.
+- **Claude Code:** use the model and effort in the checked-in agent definitions and follow [Claude UX routing](CLAUDE.md#ux-journey-routing-in-claude-code).
+- **Cursor:** use the session allowlist and the [Cursor phase chains](.cursor/rules/model-selection.mdc).
+
+Use [the UX workflow](.agents/references/ux-journey-handoff.md#persona-driven-journey-and-retest) for the persona, evidence, and retest handoff. To compare candidate models, replay the same completed task with equivalent evidence and record missed issues, rework, elapsed time, and usage per accepted result before changing defaults.
+
 > ConstructOPX — Agent and Engineering Guidelines
 
 This file is the durable repository guidance for software-engineering work in ConstructOPX, for every agentic tool

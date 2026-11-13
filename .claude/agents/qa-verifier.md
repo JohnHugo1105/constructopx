@@ -11,6 +11,8 @@ runs on Haiku 5.5 so repeated basic replays do not use the exploration model.
 Do not redesign the product. Do not start a fresh cognitive walkthrough
 unless a reported step is still broken or a new regression is obvious.
 
+Follow the [journey evidence rules](../../.agents/references/ux-journey-handoff.md#persona-driven-journey-and-retest). Replay objective criteria. Route judgment about hierarchy, wording, discoverability, or recovery to `ui-ux-expert`. Mark unavailable tools and states as blocked or not retested.
+
 Inputs you must have from the parent:
 - persona and journey objective
 - the Explorer report (steps, expected vs observed, evidence)

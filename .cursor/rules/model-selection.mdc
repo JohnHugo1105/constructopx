@@ -1,0 +1,52 @@
+---
+description: Selects models for delegated Cursor phases from the current session allowlist.
+alwaysApply: true
+---
+
+# Cursor model selection
+
+Keep small edits in the current turn. For delegated work, use the first available exact Task model slug from the appropriate chain. Frontmatter supplies the named agent’s default. The phase chain controls a per-launch override. Check the actual model on the task card. When a launch fails for access or credit, try the next available entry once. If none can launch, handle the phase in the parent and record the actual model. Keep planning and complex final review read-only.
+
+## Planning
+
+1. `gpt-5.6-sol-medium`
+2. `claude-sonnet-5-5-high`
+3. `claude-opus-5-5-high`
+4. `gpt-5.6-terra-medium`
+5. `cursor-grok-4.6-xhigh`
+6. `cursor-grok-4.5-high-fast`
+
+## Settled implementation
+
+1. `gpt-5.6-terra-medium`
+2. `claude-sonnet-5-5-medium`
+3. `composer-2.5-fast`
+4. `gpt-5.6-luna-medium`
+5. `cursor-grok-4.5-high-fast`
+
+## Hard implementation
+
+Use this phase for financial or project records, permissions, concurrency, tenant isolation, migrations, or public contracts. Raise effort on the same model when it skips files or checks. Use Opus 5.5 for hard implementation only after Sonnet at higher effort had the evidence and was still wrong. Keep a complex architecture or final-review call separate from routine implementation.
+
+1. `claude-sonnet-5-5-high`
+2. `gpt-5.6-sol-medium`
+3. `cursor-grok-4.6-xhigh`
+4. `cursor-grok-4.5-high-fast`
+
+## Independent complex final review
+
+1. `claude-opus-5-5-high`
+2. `claude-sonnet-5-5-high`
+3. `gpt-5.6-sol-medium`
+4. `cursor-grok-4.6-xhigh`
+5. `cursor-grok-4.5-high-fast`
+
+## UX exploration and replay
+
+For exploration and judgment-based sign-off, use `claude-sonnet-5-5-medium` or `gpt-5.6-sol-medium` with rendered evidence. For objective replays and narrow extraction, use `claude-haiku-5-5-medium` or `gpt-5.6-luna-medium`. If neither is offered, use the least expensive available Sonnet at Low or Medium. Follow the shared UX workflow linked from AGENTS.md.
+
+## Cursor-only plans and model trials
+
+Use `composer-2.5-fast` for settled implementation when available, then `cursor-grok-4.5-high-fast`. For planning, hard implementation, and complex review, use `cursor-grok-4.6-xhigh` then `cursor-grok-4.5-high-fast`. Trial Grok 4.7 on a completed complex task when the session exposes its exact Task slug. Compare with 4.6 before promoting it. Use the existing GPT-5.6 routes until newer Task slugs are available and verified.
+
+Fable 5.2 is a rare escalation for a long-running problem that remains unresolved after Opus Extra High. Use the current session’s supported model and effort.

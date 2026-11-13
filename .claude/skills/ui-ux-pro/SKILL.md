@@ -29,6 +29,8 @@ request.
 When custom agents were explicitly requested for a small audit with no requested
 implementation, use only `ui_ux_expert`.
 
+Follow the [shared journey and retest procedure](../../../.agents/references/ux-journey-handoff.md) for persona walkthroughs and retests.
+
 ## Evaluation baseline
 
 Audit against `.agents/references/ui-ux-design-standards.md`, the repository's

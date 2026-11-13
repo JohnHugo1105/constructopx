@@ -72,8 +72,9 @@ legacy. Do not select them for work in this repo.
 | `dev-lead-reviewer`, `security-engineer` | Opus 5.5 (`claude-opus-5-5`), `xhigh` | Difficult review of complex or security-sensitive changes |
 | `product-planner` | Opus 5.5 (`claude-opus-5-5`), `high` | Open-ended requirements and backlog decomposition |
 | `integration-engineer` | Opus 5.5 (`claude-opus-5-5`), `high` | Parallel writers, migrations, and shared surfaces |
-| `ui-ux-expert`, `ux-auditor` | Opus 5.5 (`claude-opus-5-5`), `high` | Difficult visual or product-wide UX judgment. Minor UI polish stays on the Sonnet session |
-| `senior-engineer` | Sonnet 5.5 (`claude-sonnet-5-5`), `high` | Implementation from a settled plan: APIs, Angular UI, tests, routine fixes |
+| `ui-ux-expert` | Sonnet 5.5, `medium` | Rendered journey exploration and visual judgment |
+| `ux-auditor` | Opus 5.5, `high` | Systemic UX analysis from an existing finding set |
+| `senior-engineer` | Sonnet 5.5 (`claude-sonnet-5-5`), `medium` | Implementation from a settled plan: APIs, Angular UI, tests, routine fixes |
 | `quality-engineer` | Sonnet 5.5 (`claude-sonnet-5-5`), `high` | Acceptance-test matrix and failure judgment |
 | `qa-verifier` | Haiku 5.5 (`claude-haiku-5-5`), `medium` | Replay of a documented journey. Narrow browser work |
 | `Explore`, `mechanical-extractor` | Haiku 5.5 (`claude-haiku-5-5`), `medium` | Lookups, transcription, inventories, summaries. Read-only |
@@ -94,3 +95,12 @@ legacy. Do not select them for work in this repo.
 Run the reviewers (`dev-lead-reviewer`, `security-engineer`) in parallel after validation passes. For a
 one-off subagent, pass `model: "haiku"` for a read-only lookup, summary, classification, or replay;
 pass `model: "sonnet"` when it must implement; pass `model: "opus"` only for the Opus cases above.
+
+## UX journey routing in Claude Code
+
+- **Explore and judge:** Sonnet 5.5 Medium (`ui-ux-expert`) for rendered persona walkthroughs. Raise to High for an unclear cause across screens, states, or viewports.
+- **Implement:** Sonnet 5.5 Medium (`senior-engineer`) for a bounded fix and its focused checks. Use higher effort for a genuinely complex implementation.
+- **Replay:** Haiku 5.5 Medium (`qa-verifier`) for documented steps with objective criteria. Return to Sonnet for hierarchy, wording, discoverability, and recovery judgment.
+- **Audit patterns:** Opus 5.5 High (`ux-auditor`) for systemic analysis of existing findings. Keep Fable 5.2 at the rare-escalation tier.
+
+Follow the [journey and evidence workflow](.agents/references/ux-journey-handoff.md#persona-driven-journey-and-retest). Use the connected browser, such as Claude Code with Chrome, or the repository’s Android test tools where applicable. Use `/tasks` to check the actual model and effort when substitution matters.
